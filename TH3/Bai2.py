@@ -17,21 +17,13 @@ import sys
 # Tăng giới hạn đệ quy cho cây DFS
 sys.setrecursionlimit(100000)
 
-input_data = sys.stdin.read().split()
-if not input_data:
-    sys.exit(0)
-
-n = int(input_data[0])
-m = int(input_data[1])
-
+n, m = map(int, input().split())
 ke = [[] for _ in range(n + 1)]
-pos = 2
 for _ in range(m):
-    u = int(input_data[pos])
-    v = int(input_data[pos + 1])
-    pos += 2
+    u, v = map(int, input().split())
     ke[u].append(v)
     ke[v].append(u)
+
 
 tim = [0] * (n + 1)
 low = [0] * (n + 1)
