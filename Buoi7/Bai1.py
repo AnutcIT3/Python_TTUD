@@ -4,7 +4,7 @@ a = input().strip()
 b = input().strip()
 
 n,m = len(a), len(b)
-dp = [[0]*(m-1) for _ in range(n+1)]
+dp = [[0]*(m+1) for _ in range(n+1)]
 kq = 0
 
 for i in range(1, n+1):
@@ -13,6 +13,7 @@ for i in range(1, n+1):
             if i>1 and a[i-1] == a[i-2]:
                 dp[i][j] = 1
             else: 
-                dp[i][j] = dp[i-1][j-1]+1
+             dp[i][j] = dp[i-1][j-1]+1
             kq = max(kq, dp[i][j])
-print(kq)
+# print(kq)
+print(n+m-kq)
