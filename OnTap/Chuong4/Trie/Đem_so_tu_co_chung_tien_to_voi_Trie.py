@@ -5,6 +5,7 @@ while not line1:
     line1 = input().split()
 n,q = int(line1[0]), int(line1[1])
 
+# tạo cây
 trie = {}
 for _ in range(n):
     w = input().strip()
@@ -14,6 +15,8 @@ for _ in range(n):
             curr[ch] = {'_count':0}
         curr = curr[ch]
         curr['_count']+=1
+
+# truy vấn
 for _ in range(q):
     pref = input().strip()
     curr = trie
