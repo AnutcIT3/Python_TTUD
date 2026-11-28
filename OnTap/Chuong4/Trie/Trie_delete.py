@@ -7,7 +7,7 @@
 line1 = input().split()
 while not line1:
     line1 = input().split()
-n, q = int(line1[0]), int(line1[1])
+n,q = int(line1[0]),int(line1[1])
 
 trie = {}
 for _ in range(n):
@@ -32,5 +32,4 @@ for _ in range(q):
         curr = curr[ch]
     if '#' in curr:
         violated = True
-        
     print("YES" if violated else "NO")
